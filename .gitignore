@@ -21,3 +21,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+https://accounts.spotify.com/authorize?client_id=c57610603fbc4ba0aa2597610c122d82&response_type=token&redirect_uri=http://localhost:3000/
