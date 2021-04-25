@@ -3,6 +3,9 @@ const clientID = "c57610603fbc4ba0aa2597610c122d82";
 const redirectURI = "https://remix375.github.io/jamming/";
 
 
+//dev
+//const redirectURI = "http://localhost:3000/";
+
 
 
 
@@ -21,7 +24,7 @@ const Spotify = {
             userAccesToken = accessTokenMatch[1];
             const expiresIn = Number(expireDateMatch[1])
 
-            window.history.pushState('Access Token', null, '/');
+            window.history.pushState('Access Token', null, '/jamming');
             window.setTimeout(() => userAccesToken = '', expiresIn * 1000);
         } else {
             window.location = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`
