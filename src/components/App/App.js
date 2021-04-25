@@ -12,38 +12,11 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchResults: [{
-        name: "best song",
-        artist: "Remi",
-        album: "best Album",
-        uri: 23232,
-        id:1
-      },
-      {
-        name: "love song",
-        artist: "still me",
-        album: "same one",
-        uri: 23232,
-        id:2
-      },
-      {
-        name: "rap song",
-        artist: "still the same",
-        album: "same",
-        uri: 23232,
-        id:3
-      }
-    ],
+      searchResults: [],
 
-    playlistName: "Playlist Name",
+      playlistName: "Playlist Name",
 
-    playlistTracks: [{
-      name: "best song",
-      artist: "Remi",
-      album: "best Album",
-      uri: 23232,
-      id:1
-    }]
+      playlistTracks: []
     }
 
 
@@ -119,8 +92,14 @@ class App extends React.Component {
     this.state.playlistTracks.forEach(track => {
       trackURIs.push(track.uri)
     })
-    console.log(trackURIs)
 
+    Spotify.savePlaylist(this.state.playlistName, trackURIs)
+
+
+    this.setState({
+      playlistTracks: [],
+      playlistName: "New Playlist"
+    })
   }
 
 
