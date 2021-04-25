@@ -1,6 +1,6 @@
 let userAccesToken = "";
 const clientID = "c57610603fbc4ba0aa2597610c122d82";
-const redirectURI = "http://localhost:3000/";
+const redirectURI = "https://remix375.github.io/jamming/";
 
 
 
